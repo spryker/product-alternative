@@ -11,17 +11,7 @@ use Generated\Shared\Transfer\ProductAlternativeTransfer;
 
 interface ProductAlternativePluginExecutorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeTransfer $productAlternativeTransfer
-     *
-     * @return void
-     */
     public function executePostProductAlternativeCreatePlugins(ProductAlternativeTransfer $productAlternativeTransfer): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeTransfer $productAlternativeTransfer
-     *
-     * @return void
-     */
     public function executePostProductAlternativeDeletePlugins(ProductAlternativeTransfer $productAlternativeTransfer): void;
 }

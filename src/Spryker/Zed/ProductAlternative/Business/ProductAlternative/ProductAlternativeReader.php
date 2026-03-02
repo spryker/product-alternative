@@ -55,11 +55,6 @@ class ProductAlternativeReader implements ProductAlternativeReaderInterface
         $this->alternativeProductApplicablePlugins = $alternativeProductApplicablePlugins;
     }
 
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListTransfer
-     */
     public function getProductAlternativeListByIdProductConcrete(int $idProductConcrete): ProductAlternativeListTransfer
     {
         $productAlternativeCollection = $this->productAlternativeRepository
@@ -82,11 +77,6 @@ class ProductAlternativeReader implements ProductAlternativeReaderInterface
             ->doAllConcreteProductsHaveAlternatives($productIds);
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return bool
-     */
     public function isAlternativeProductApplicable(int $idProduct): bool
     {
         foreach ($this->alternativeProductApplicablePlugins as $alternativeProductApplicablePlugin) {
@@ -107,12 +97,6 @@ class ProductAlternativeReader implements ProductAlternativeReaderInterface
             ->findProductAbstractIdsWhichConcreteHasAlternative();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeCollectionTransfer $productAlternativeCollectionTransfer
-     * @param \Generated\Shared\Transfer\ProductAlternativeListTransfer $productAlternativeListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListTransfer
-     */
     protected function mapProductAlternativeToProductAlternativeItemTransfer(
         ProductAlternativeCollectionTransfer $productAlternativeCollectionTransfer,
         ProductAlternativeListTransfer $productAlternativeListTransfer
@@ -136,11 +120,6 @@ class ProductAlternativeReader implements ProductAlternativeReaderInterface
         return $productAlternativeListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeTransfer $productAlternativeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListItemTransfer
-     */
     protected function getProductAbstractListItemTransfer(
         ProductAlternativeTransfer $productAlternativeTransfer
     ): ProductAlternativeListItemTransfer {
@@ -156,11 +135,6 @@ class ProductAlternativeReader implements ProductAlternativeReaderInterface
         return $productAbstractListItemTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeTransfer $productAlternativeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListItemTransfer
-     */
     protected function getProductConcreteListItemTransfer(
         ProductAlternativeTransfer $productAlternativeTransfer
     ): ProductAlternativeListItemTransfer {

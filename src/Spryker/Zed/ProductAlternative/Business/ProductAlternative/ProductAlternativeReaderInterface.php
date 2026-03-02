@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ProductAlternativeListTransfer;
 
 interface ProductAlternativeReaderInterface
 {
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListTransfer
-     */
     public function getProductAlternativeListByIdProductConcrete(int $idProductConcrete): ProductAlternativeListTransfer;
 
     /**
@@ -25,11 +20,6 @@ interface ProductAlternativeReaderInterface
      */
     public function doAllConcreteProductsHaveAlternatives(array $productIds): bool;
 
-    /**
-     * @param int $idProduct
-     *
-     * @return bool
-     */
     public function isAlternativeProductApplicable(int $idProduct): bool;
 
     /**

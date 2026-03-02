@@ -31,9 +31,6 @@ class GetProductAlternativeCollectionTest extends Unit
      */
     protected ProductAlternativeBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetProductAlternativeCollectionReturnsCorrectProductAlternativesWithoutPagination(): void
     {
         // Arrange
@@ -68,9 +65,6 @@ class GetProductAlternativeCollectionTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testGetProductAlternativeCollectionReturnsCollectionWithFiveProductAlternativesWhileHavingLimitOffsetPaginationApplied(): void
     {
         // Arrange

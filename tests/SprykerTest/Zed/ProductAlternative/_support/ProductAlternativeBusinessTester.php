@@ -30,9 +30,6 @@ class ProductAlternativeBusinessTester extends Actor
 {
     use _generated\ProductAlternativeBusinessTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureProductAlternativeTableIsEmpty(): void
     {
         SpyProductAlternativeQuery::create()->deleteAll();

@@ -33,11 +33,6 @@ class ProductAlternativePluginExecutor implements ProductAlternativePluginExecut
         $this->postProductAlternativeCreatePlugins = $postProductAlternativeCreatePlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeTransfer $productAlternativeTransfer
-     *
-     * @return void
-     */
     public function executePostProductAlternativeCreatePlugins(ProductAlternativeTransfer $productAlternativeTransfer): void
     {
         foreach ($this->postProductAlternativeCreatePlugins as $postCreateProductAlternativePlugin) {
@@ -45,11 +40,6 @@ class ProductAlternativePluginExecutor implements ProductAlternativePluginExecut
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeTransfer $productAlternativeTransfer
-     *
-     * @return void
-     */
     public function executePostProductAlternativeDeletePlugins(ProductAlternativeTransfer $productAlternativeTransfer): void
     {
         foreach ($this->postProductAlternativeDeletePlugins as $postProductAlternativeDeletePlugin) {

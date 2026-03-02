@@ -15,12 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class ProductAlternativeEntityManager extends AbstractEntityManager implements ProductAlternativeEntityManagerInterface
 {
-    /**
-     * @param int $idProduct
-     * @param int $idProductAbstractAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeTransfer
-     */
     public function saveProductAbstractAlternative(int $idProduct, int $idProductAbstractAlternative): ProductAlternativeTransfer
     {
         $productAlternativeEntity = $this->getFactory()
@@ -35,12 +29,6 @@ class ProductAlternativeEntityManager extends AbstractEntityManager implements P
             ->mapProductAlternativeTransfer($productAlternativeEntity);
     }
 
-    /**
-     * @param int $idProduct
-     * @param int $idProductConcreteAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeTransfer
-     */
     public function saveProductConcreteAlternative(int $idProduct, int $idProductConcreteAlternative): ProductAlternativeTransfer
     {
         $productAlternativeEntity = $this->getFactory()
@@ -55,11 +43,6 @@ class ProductAlternativeEntityManager extends AbstractEntityManager implements P
             ->mapProductAlternativeTransfer($productAlternativeEntity);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeTransfer $productAlternativeTransfer
-     *
-     * @return void
-     */
     public function deleteProductAlternative(ProductAlternativeTransfer $productAlternativeTransfer): void
     {
         $productAlternative = $this->getFactory()

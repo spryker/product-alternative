@@ -54,11 +54,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
      */
     public const PROPEL_QUERY_PRODUCT_ABSTRACT = 'QUERY_PRODUCT_ABSTRACT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -71,11 +66,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -85,11 +75,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addLocaleFacade(Container $container): Container
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {
@@ -101,11 +86,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductFacade(Container $container): Container
     {
         $container->set(static::FACADE_PRODUCT, function (Container $container) {
@@ -117,11 +97,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT, $container->factory(function () {
@@ -131,11 +106,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addProductAbstractPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_PRODUCT_ABSTRACT, $container->factory(function () {
@@ -145,11 +115,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPostProductAlternativeCreatePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_POST_PRODUCT_ALTERNATIVE_CREATE, function () {
@@ -159,11 +124,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addPostProductAlternativeDeletePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_POST_PRODUCT_ALTERNATIVE_DELETE, function () {
@@ -173,11 +133,6 @@ class ProductAlternativeDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addAlternativeProductApplicablePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_ALTERNATIVE_PRODUCT_APPLICABLE, function () {

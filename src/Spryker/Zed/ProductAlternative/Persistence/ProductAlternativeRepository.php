@@ -30,11 +30,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class ProductAlternativeRepository extends AbstractRepository implements ProductAlternativeRepositoryInterface
 {
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeCollectionTransfer
-     */
     public function getProductAlternativesForProductConcrete(int $idProductConcrete): ProductAlternativeCollectionTransfer
     {
         $productAlternativeEntities = $this->getFactory()
@@ -47,11 +42,6 @@ class ProductAlternativeRepository extends AbstractRepository implements Product
             ->mapProductAlternativeCollectionTransfer($productAlternativeEntities);
     }
 
-    /**
-     * @param int $idProductAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeTransfer|null
-     */
     public function findProductAlternativeByIdProductAlternative(int $idProductAlternative): ?ProductAlternativeTransfer
     {
         $alternativeProductEntity = $this->getFactory()
@@ -155,11 +145,6 @@ class ProductAlternativeRepository extends AbstractRepository implements Product
             ->mapProductConcreteDataToProductAlternativeListItemTransfer($productConcreteData);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeCriteriaTransfer $productAlternativeCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeCollectionTransfer
-     */
     public function getProductAlternativeCollection(
         ProductAlternativeCriteriaTransfer $productAlternativeCriteriaTransfer
     ): ProductAlternativeCollectionTransfer {
@@ -297,12 +282,6 @@ class ProductAlternativeRepository extends AbstractRepository implements Product
         return $productAbstractIds->toArray();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     * @param \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery $productAlternativeQuery
-     *
-     * @return \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery
-     */
     protected function applyProductAlternativePagination(
         PaginationTransfer $paginationTransfer,
         SpyProductAlternativeQuery $productAlternativeQuery

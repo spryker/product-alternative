@@ -40,12 +40,6 @@ class ProductAlternativeWriter implements ProductAlternativeWriterInterface
      */
     protected $productAlternativePluginExecutor;
 
-    /**
-     * @param \Spryker\Zed\ProductAlternative\Persistence\ProductAlternativeEntityManagerInterface $productAlternativeEntityManager
-     * @param \Spryker\Zed\ProductAlternative\Persistence\ProductAlternativeRepositoryInterface $productAlternativeRepository
-     * @param \Spryker\Zed\ProductAlternative\Dependency\Facade\ProductAlternativeToProductFacadeInterface $productFacade
-     * @param \Spryker\Zed\ProductAlternative\Business\ProductAlternative\ProductAlternativePluginExecutorInterface $productAlternativePluginExecutor
-     */
     public function __construct(
         ProductAlternativeEntityManagerInterface $productAlternativeEntityManager,
         ProductAlternativeRepositoryInterface $productAlternativeRepository,
@@ -58,11 +52,6 @@ class ProductAlternativeWriter implements ProductAlternativeWriterInterface
         $this->productAlternativePluginExecutor = $productAlternativePluginExecutor;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductConcreteTransfer
-     */
     public function persistProductAlternative(ProductConcreteTransfer $productConcreteTransfer): ProductConcreteTransfer
     {
         $productConcreteTransfer->requireProductAlternativeCreateRequests();
@@ -75,11 +64,6 @@ class ProductAlternativeWriter implements ProductAlternativeWriterInterface
         return $productConcreteTransfer;
     }
 
-    /**
-     * @param int $idProductAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeResponseTransfer
-     */
     public function deleteProductAlternativeByIdProductAlternative(int $idProductAlternative): ProductAlternativeResponseTransfer
     {
         $productAlternativeTransfer = $this->productAlternativeRepository
@@ -113,11 +97,6 @@ class ProductAlternativeWriter implements ProductAlternativeWriterInterface
             ->setIsSuccessful(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeCreateRequestTransfer $productAlternativeCreateRequestTransfer
-     *
-     * @return void
-     */
     protected function executeCreateTransaction(ProductAlternativeCreateRequestTransfer $productAlternativeCreateRequestTransfer): void
     {
         $idProductAbstract = $this->productFacade->findProductAbstractIdBySku($productAlternativeCreateRequestTransfer->getAlternativeSku());
@@ -135,12 +114,6 @@ class ProductAlternativeWriter implements ProductAlternativeWriterInterface
         }
     }
 
-    /**
-     * @param int $idProduct
-     * @param int $idProductAbstractAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeTransfer
-     */
     protected function createProductAbstractAlternative(int $idProduct, int $idProductAbstractAlternative): ProductAlternativeTransfer
     {
         $productAlternativeTransfer = $this->productAlternativeEntityManager
@@ -154,12 +127,6 @@ class ProductAlternativeWriter implements ProductAlternativeWriterInterface
         return $productAlternativeTransfer;
     }
 
-    /**
-     * @param int $idProduct
-     * @param int $idProductConcreteAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeTransfer
-     */
     protected function createProductConcreteAlternative(int $idProduct, int $idProductConcreteAlternative): ProductAlternativeTransfer
     {
         $productAlternativeTransfer = $this->productAlternativeEntityManager

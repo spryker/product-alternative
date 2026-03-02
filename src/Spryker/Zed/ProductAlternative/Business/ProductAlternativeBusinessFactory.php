@@ -25,9 +25,6 @@ use Spryker\Zed\ProductAlternative\ProductAlternativeDependencyProvider;
  */
 class ProductAlternativeBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Business\ProductAlternative\ProductAlternativeWriterInterface
-     */
     public function createProductAlternativeWriter(): ProductAlternativeWriterInterface
     {
         return new ProductAlternativeWriter(
@@ -38,9 +35,6 @@ class ProductAlternativeBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Business\ProductAlternative\ProductAlternativeReaderInterface
-     */
     public function createProductAlternativeReader(): ProductAlternativeReaderInterface
     {
         return new ProductAlternativeReader(
@@ -51,9 +45,6 @@ class ProductAlternativeBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Business\ProductAlternative\ProductAlternativePluginExecutorInterface
-     */
     public function createProductAlternativePluginExecutor(): ProductAlternativePluginExecutorInterface
     {
         return new ProductAlternativePluginExecutor(
@@ -62,17 +53,11 @@ class ProductAlternativeBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Dependency\Facade\ProductAlternativeToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): ProductAlternativeToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(ProductAlternativeDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Dependency\Facade\ProductAlternativeToProductFacadeInterface
-     */
     public function getProductFacade(): ProductAlternativeToProductFacadeInterface
     {
         return $this->getProvidedDependency(ProductAlternativeDependencyProvider::FACADE_PRODUCT);

@@ -15,18 +15,8 @@ use Generated\Shared\Transfer\ProductAlternativeTransfer;
 
 interface ProductAlternativeRepositoryInterface
 {
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeCollectionTransfer
-     */
     public function getProductAlternativesForProductConcrete(int $idProductConcrete): ProductAlternativeCollectionTransfer;
 
-    /**
-     * @param int $idProductAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeTransfer|null
-     */
     public function findProductAlternativeByIdProductAlternative(int $idProductAlternative): ?ProductAlternativeTransfer;
 
     /**
@@ -36,23 +26,11 @@ interface ProductAlternativeRepositoryInterface
      */
     public function doAllConcreteProductsHaveAlternatives(array $productIds): bool;
 
-    /**
-     * @param int $idProductAbstract
-     * @param \Generated\Shared\Transfer\LocaleTransfer $localeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListItemTransfer
-     */
     public function getProductAlternativeListItemTransferForProductAbstract(
         int $idProductAbstract,
         LocaleTransfer $localeTransfer
     ): ProductAlternativeListItemTransfer;
 
-    /**
-     * @param int $idProduct
-     * @param \Generated\Shared\Transfer\LocaleTransfer $localeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListItemTransfer
-     */
     public function getProductAlternativeListItemTransferForProductConcrete(
         int $idProduct,
         LocaleTransfer $localeTransfer
@@ -63,11 +41,6 @@ interface ProductAlternativeRepositoryInterface
      */
     public function findProductAbstractIdsWhichConcreteHasAlternative(): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAlternativeCriteriaTransfer $productAlternativeCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeCollectionTransfer
-     */
     public function getProductAlternativeCollection(
         ProductAlternativeCriteriaTransfer $productAlternativeCriteriaTransfer
     ): ProductAlternativeCollectionTransfer;

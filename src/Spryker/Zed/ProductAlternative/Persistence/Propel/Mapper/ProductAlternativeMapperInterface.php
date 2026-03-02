@@ -15,32 +15,12 @@ use Propel\Runtime\Collection\Collection;
 
 interface ProductAlternativeMapperInterface
 {
-    /**
-     * @param \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternative $productAlternativeEntity
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeTransfer
-     */
     public function mapProductAlternativeTransfer(SpyProductAlternative $productAlternativeEntity): ProductAlternativeTransfer;
 
-    /**
-     * @param \Propel\Runtime\Collection\Collection|null $productAlternativeEntities
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeCollectionTransfer
-     */
     public function mapProductAlternativeCollectionTransfer(?Collection $productAlternativeEntities): ProductAlternativeCollectionTransfer;
 
-    /**
-     * @param array $productConcreteData
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListItemTransfer
-     */
     public function mapProductConcreteDataToProductAlternativeListItemTransfer(array $productConcreteData): ProductAlternativeListItemTransfer;
 
-    /**
-     * @param array $productAbstractData
-     *
-     * @return \Generated\Shared\Transfer\ProductAlternativeListItemTransfer
-     */
     public function mapProductAbstractDataToProductAlternativeListItemTransfer(array $productAbstractData): ProductAlternativeListItemTransfer;
 
     /**

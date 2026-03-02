@@ -19,12 +19,6 @@ class ProductAlternativeDataHelper extends Module
     use DataCleanupHelperTrait;
     use LocatorHelperTrait;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     * @param string $skuProductAlternative
-     *
-     * @return \Generated\Shared\Transfer\ProductConcreteTransfer
-     */
     public function haveProductAlternative(
         ProductConcreteTransfer $productConcreteTransfer,
         string $skuProductAlternative
@@ -43,19 +37,11 @@ class ProductAlternativeDataHelper extends Module
         return $productConcreteTransfer;
     }
 
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Business\ProductAlternativeFacadeInterface
-     */
     protected function getProductAlternativeFacade(): ProductAlternativeFacadeInterface
     {
         return $this->getLocator()->productAlternative()->facade();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     *
-     * @return void
-     */
     protected function cleanupProductAlternative(ProductConcreteTransfer $productConcreteTransfer): void
     {
         foreach ($productConcreteTransfer->getProductAlternatives() as $productAlternativeTransfer) {

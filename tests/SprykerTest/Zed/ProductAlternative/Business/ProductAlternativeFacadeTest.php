@@ -28,9 +28,6 @@ class ProductAlternativeFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testProductCanHaveAlternativeAbstractProduct(): void
     {
         // Arrange
@@ -50,9 +47,6 @@ class ProductAlternativeFacadeTest extends Unit
         $this->assertCount(1, $productDiscontinuedResponseTransfer->getProductAlternatives());
     }
 
-    /**
-     * @return void
-     */
     public function testProductCanHaveAlternativeConcreteProduct(): void
     {
         // Arrange
@@ -72,9 +66,6 @@ class ProductAlternativeFacadeTest extends Unit
         $this->assertCount(1, $productDiscontinuedResponseTransfer->getProductAlternatives());
     }
 
-    /**
-     * @return void
-     */
     public function testAlternativeProductCanBeRemoved(): void
     {
         // Arrange
@@ -98,9 +89,6 @@ class ProductAlternativeFacadeTest extends Unit
         $this->assertCount(0, $productDiscontinuedResponseTransfer->getProductAlternatives());
     }
 
-    /**
-     * @return void
-     */
     public function testDoAllConcreteProductsHaveAlternativesReturnsFalseWhenNotAllConcretesHaveAlternatives(): void
     {
         // Arrange
@@ -119,9 +107,6 @@ class ProductAlternativeFacadeTest extends Unit
         $this->assertFalse($result);
     }
 
-    /**
-     * @return void
-     */
     public function testDoAllConcreteProductsHaveAlternativesReturnsTrueWhenNotAllConcretesHaveAlternatives(): void
     {
         // Arrange
@@ -141,9 +126,6 @@ class ProductAlternativeFacadeTest extends Unit
         $this->assertTrue($result);
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductAbstractIdsWhichConcreteHasAlternativeReturnsCorrectDataWhenProductWithoutAlternative(): void
     {
         // Arrange
@@ -156,9 +138,6 @@ class ProductAlternativeFacadeTest extends Unit
         $this->assertNotContains($productConcreteTransferWithoutAlternative->getFkProductAbstract(), $productAbstractIds);
     }
 
-    /**
-     * @return void
-     */
     public function testFindProductAbstractIdsWhichConcreteHasAlternativeReturnsCorrectDataWhenProductWithAlternative(): void
     {
         // Arrange

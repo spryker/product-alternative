@@ -22,33 +22,21 @@ use Spryker\Zed\ProductAlternative\ProductAlternativeDependencyProvider;
  */
 class ProductAlternativePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ProductAlternative\Persistence\SpyProductAlternativeQuery
-     */
     public function createProductAlternativePropelQuery(): SpyProductAlternativeQuery
     {
         return SpyProductAlternativeQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\ProductAlternative\Persistence\Propel\Mapper\ProductAlternativeMapperInterface
-     */
     public function createProductAlternativeMapper(): ProductAlternativeMapperInterface
     {
         return new ProductAlternativeMapper();
     }
 
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductQuery
-     */
     public function createProductPropelQuery(): SpyProductQuery
     {
         return $this->getProvidedDependency(ProductAlternativeDependencyProvider::PROPEL_QUERY_PRODUCT);
     }
 
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductAbstractQuery
-     */
     public function createProductAbstractPropelQuery(): SpyProductAbstractQuery
     {
         return $this->getProvidedDependency(ProductAlternativeDependencyProvider::PROPEL_QUERY_PRODUCT_ABSTRACT);
